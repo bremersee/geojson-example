@@ -66,7 +66,7 @@ public class WebController {
     linearRingProperties.put("width", 2);
     GeoJsonFeature positionsRingFeature = new GeoJsonFeature(
         null,
-        GeometryUtils.transformWgs84ToMercator(linearRing, true),
+        GeometryUtils.transformWgs84ToMercator(linearRing),
         false,
         linearRingProperties);
 
@@ -76,7 +76,7 @@ public class WebController {
     polyProperties.put("width", 4);
     GeoJsonFeature positionsBoundingBoxFeature = new GeoJsonFeature(
         null,
-        GeometryUtils.transformWgs84ToMercator(poly, true),
+        GeometryUtils.transformWgs84ToMercator(poly),
         false,
         polyProperties);
 
@@ -97,7 +97,7 @@ public class WebController {
     Point position = geometryService.getNextPosition();
     return new GeoJsonFeature(
         null,
-        GeometryUtils.transformWgs84ToMercator(position, true),
+        GeometryUtils.transformWgs84ToMercator(position),
         false,
         null);
   }
